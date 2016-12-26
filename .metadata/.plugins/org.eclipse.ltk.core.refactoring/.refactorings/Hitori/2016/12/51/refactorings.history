@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move 5 elements to &apos;Hitori-JAVA/src&apos;&#x0D;&#x0A;- Original project: &apos;Hitori&apos;&#x0D;&#x0A;- Destination element: &apos;Hitori-JAVA/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Cell.java&#x0D;&#x0A;     Board.java&#x0D;&#x0A;     Stack.java&#x0D;&#x0A;     Game.java&#x0D;&#x0A;     quotes&#x0D;&#x0A;- Update references to refactored element" description="Move elements" destination="=Hitori-JAVA/src" element1="generated/java/src/Hitori/Cell.java" element2="generated/java/src/Hitori/Board.java" element3="generated/java/src/Hitori/Stack.java" element4="generated/java/src/Hitori/Game.java" element5="generated/java/src/Hitori/quotes" files="4" flags="589830" folders="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1482465042671" units="0" version="1.0"/>
-</session>
