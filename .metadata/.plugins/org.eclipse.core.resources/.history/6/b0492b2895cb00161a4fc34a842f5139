@@ -1,0 +1,22 @@
+import java.util.Calendar;
+
+import org.overture.codegen.runtime.MATH;
+
+import Hitori.Board;
+import Hitori.Player;
+import Hitori.Rules;
+
+public class Main {
+	
+	private static Player player;
+	private static Rules rules;
+	private static Board board;
+
+	public static void main(String[] args) {
+		
+		Calendar cal = Calendar.getInstance();
+		MATH.srand(cal.getTimeInMillis());
+		
+	}
+
+}

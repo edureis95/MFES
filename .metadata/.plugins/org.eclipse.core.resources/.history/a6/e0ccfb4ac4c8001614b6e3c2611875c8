@@ -1,0 +1,12 @@
+package Main;
+
+public class Main {
+	
+	public static Board board;
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

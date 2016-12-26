@@ -1,0 +1,25 @@
+package Main;
+
+import java.util.Iterator;
+
+import org.overture.codegen.runtime.SetUtil;
+import org.overture.codegen.runtime.VDMMap;
+
+import Hitori.Board;
+
+public class Main {
+	
+	public static Board board;
+
+	public static void main(String[] args) {
+		
+		board = new Board(4);
+		VDMMap cenas = board.getBoard();
+		for(int i = 0; i < BOARD_SIZE - 1; i++)
+			for(int j = 0; j < BOARD_SIZE - 1; j++)
+			{
+				
+			}
+	}
+
+}

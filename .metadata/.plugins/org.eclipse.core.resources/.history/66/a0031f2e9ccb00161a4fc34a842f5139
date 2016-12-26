@@ -1,0 +1,36 @@
+import java.util.Calendar;
+
+import org.overture.codegen.runtime.MATH;
+
+import Hitori.Board;
+import Hitori.Cell.Coord;
+import Hitori.Player;
+import Hitori.Rules;
+
+public class Main {
+	
+	private static Player player;
+	private static Rules rules;
+	private static Board board;
+
+	public static void main(String[] args) {
+		
+		Calendar cal = Calendar.getInstance();
+		MATH.srand(cal.getTimeInMillis());
+		
+		int n = 12;
+		rules = new Rules();
+		board = new Board(n, rules);
+		player = new Player(board, rules);
+		
+		for(int i = 0; i < n; i++)
+		{
+			for(int j = 0; j < n; j++)
+			{
+				System.out.print(board.getCellOfBoard(new Coord(i, j)).getNumber() + " ");
+			}
+			System.out.println(" ");
+		}
+	}
+
+}

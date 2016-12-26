@@ -1,0 +1,40 @@
+
+import java.util.Calendar;
+import java.util.Iterator;
+
+import org.overture.codegen.runtime.MATH;
+import org.overture.codegen.runtime.SetUtil;
+import org.overture.codegen.runtime.VDMMap;
+
+import Hitori.Board;
+import Hitori.Cell;
+import Hitori.Cell.Coord;
+
+public class Main {
+	
+	public static Board board;
+
+	public static void main(String[] args) {
+		
+		Calendar cal = Calendar.getInstance();
+				
+		MATH.srand(cal.getTimeInMillis());
+		
+		int n = 5;
+		
+		board = new Board(8);
+		for(int i = 0; i < n; i++)
+		{
+			for(int j = 0; j < n; j++)
+			{
+				Cell cell = board.getCellOfBoard(new Coord(i, j));
+				if(cell.color == Hitori.quotes.WHITEQuote.getInstance())
+					System.out.print(cell.getNumber());
+				else
+					System.out.print("X");
+			}
+			System.out.println();
+		}
+	}
+
+}

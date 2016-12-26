@@ -1,0 +1,15 @@
+package Main;
+
+import Hitori.Board;
+
+public class Main {
+	
+	public static Board board;
+
+	public static void main(String[] args) {
+		
+		board = new Board(4);
+		VDMMAP cenas = board.getBoard();
+	}
+
+}

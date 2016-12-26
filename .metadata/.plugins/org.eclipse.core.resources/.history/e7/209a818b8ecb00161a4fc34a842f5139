@@ -1,0 +1,102 @@
+
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.Scanner;
+
+import org.overture.codegen.runtime.MATH;
+import org.overture.codegen.runtime.SetUtil;
+import org.overture.codegen.runtime.VDMMap;
+
+import Hitori.Board;
+import Hitori.Cell;
+import Hitori.Cell.Coord;
+import Hitori.Player;
+import Hitori.Rules;
+
+public class Main {
+
+	private static Board board;
+	private static Rules rules;
+	private static Player player;
+
+	public static void main(String[] args) {
+
+		Calendar cal = Calendar.getInstance();
+		Scanner reader = new Scanner(System.in);
+		int input = 0;
+		int x = 0;
+		int y = 0;
+		boolean whileController = false;
+
+		MATH.srand(cal.getTimeInMillis());
+
+		int n = 4;
+
+		rules = new Rules();
+		board = new Board(4, rules);
+		player = new Player(board, rules);
+
+		while(!whileController)
+		{
+			System.out.print("  ");
+			for(int i = 0; i < n; i++)
+			{
+				if(i != n - 1)
+					System.out.print(i);
+				else
+					System.out.println(i);
+			}
+			System.out.print("  ");
+			for(int i = 0; i < n; i++)
+			{
+				if(i != n - 1)
+					System.out.print("-");
+				else
+					System.out.println("-");
+			}
+			for(int i = 0; i < n; i++)
+			{
+				for(int j = 0; j < n; j++)
+				{
+					if(j == 0)
+						System.out.print(i + "" + "|");
+					Cell cell = board.getCellOfBoard(new Coord(i, j));
+					if(cell.color == Hitori.quotes.WHITEQuote.getInstance())
+						System.out.print(cell.getNumber());
+					else
+						System.out.print("X");
+				}
+				System.out.println();
+			}
+
+			System.out.println("\n1 - Jogar");
+			System.out.println("2 - Acabar");
+			
+			input = reader.nextInt();
+			switch(input)
+			{
+				case 1: 
+					System.out.println("Insira as coordenadas a jogar ");
+					x = reader.nextInt();
+					y = reader.nextInt();
+					player.play(new Coord(x, y));
+					break;
+					
+				case 2:
+					if(player.checkWin())
+					{
+						System.out.println("Tabuleiro bem preenchido\r\n\r\n");
+						whileController = true;
+					}
+					else
+						System.out.println("Tabuleiro mal preenchido\r\n\r\n");
+					break;
+				
+				default:
+					break;
+			}
+			
+		}
+	}
+
+}
